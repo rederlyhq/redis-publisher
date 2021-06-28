@@ -1,0 +1,34 @@
+{
+  "name": "redis-subscriber",
+  "version": "0.0.1",
+  "description": "A server that authenticates incoming WS connections and subscribes them to the appropriate redis channel.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "start:watch": "nodemon ./src/index.ts",
+    "start:debug": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start:debug:watch": "nodemon --inspect=5858 ./src/index.ts",
+    "build": "npm run clean && tsc",
+    "build:run": "npm run build && npm run run:build",
+    "run:build": "node ts-built/index.js"
+  },
+  "author": "Gibryon Bhojraj <gib@rederly.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@types/node": "^15.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "bullmq": "^1.30.2",
+    "eslint": "^7.27.0",
+    "fastify": "^3.17.0",
+    "fastify-jwt": "^3.0.0",
+    "fastify-websocket": "^3.2.0",
+    "ioredis": "^4.27.3",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.26.4"
+  }
+}
